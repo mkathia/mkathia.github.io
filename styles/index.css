@@ -78,8 +78,10 @@ margin-right:-10px;
 }
 
 .right .circle1, .circle2, .circle3, .circle4, .circle5 {
-    width: 150px;
-    height: 150px;
+    /* width: 150px; */
+    /* height: 150px; */
+    width: 25%;
+    height: 35%;
     border-radius: 100%;
     /* background-color: #252525; */
     overflow-x: hidden;
