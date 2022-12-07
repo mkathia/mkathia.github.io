@@ -17,7 +17,7 @@
     <div class="pw-container">
         <div class="pw-header">
             <div class="pw">
-                <label id="pw"> Password Here</label>
+                <label id="pw">Password Here</label>
             </div>
             <button id="copy">Copy</button>
         </div>
@@ -48,23 +48,6 @@
         </div>
     </div>
 </div>
-<div class="leak_checker">
-    <h2>Password Leak Checker</h2>
-    <h3><----- WIP -----></h3>
-    <input type="password" placeholder="Type your password" id="passwordIput">
-    <br><button class="check">Check</button>
-    <output id='output' class="output"></output>
-    <script src="scripts/passleak.js"></script>
-</div>
-<!-- <div>
-    <h3>Advanced Tools</h3>
-    <p>Here are some advanced tools that given research, you could utilize to improve website security.</p>
-    <ul>
-        <li><a href="https://www.metasploit.com/">Metasploit</a></li>
-        <li><a href="https://www.nmap.org/">Nmap</a></li>
-        <li><a href="https://www.wireshark.org/">Wireshark</a></li>
-    </ul>
-</div> -->
 
 <div class="checker_container">
     <div class="checker">
@@ -73,66 +56,65 @@
         </h4>
         <br>
         <input type="password" placeholder="Type your password" id="PassEntry" class="passwordInput">
+        <input type="checkbox" onClick="showPassword"> Show Password
+        <input type="password" placeholder="Type your password" id="PassEntry" class="passwordInput"><input type="checkbox" onclick="showPassword()"> Show Password
         <br>
         <span id="StrengthDisp" class="badge displayBadge">Weak</span>
         <br>
+        <span id="EntropyDisp" class = "entropy">Entropy: 0 bits</span>
         <script src="scripts/passcheck.js"></script>
     </div>
     
 </div>
-
-<div class="adv_container">
-    <div class="adv_squares">
-        <div class="col" ontouchstart="this.classList.toggle('hover');">
-            <div class="container">
-              <div id="nmap" class="front">
-                <div class="inner">
-                  <p>Nmap</p>
-                  <span>Port Scanning Utility</span>
-                </div>
-              </div>
-              <div class="back">
-                <div class="inner">
-                  <p>This tool is used for scanning network ports to discover vulnerabilities on open ports or devices. </p>
-                  <a href="nmap.org">Nmap</a>
-                </div>
-              </div>
+  <h1 class="adv_title">Advanced Tools</h1>
+    <div class="col" ontouchstart="this.classList.toggle('hover');">
+        <div class="container">
+          <div id="nmap" class="front">
+            <div class="inner">
+              <p>Nmap</p>
+              <span>Port Scanning Utility</span>
             </div>
           </div>
-          <div class="col" ontouchstart="this.classList.toggle('hover');">
-            <div class="container">
-              <div id="wireshark" class="front">
-                <div class="inner">
-                  <p>Wireshark</p>
-                  <span>Network Traffic Analyzer</span>
-                </div>
-              </div>
-              <div class="back">
-                <div class="inner">
-                  <p>This tool allows you to analyze a network's traffic, specifically the packets that flow through your device or other devices on the network.</p>
-                    <a href="wireshark.org">Wireshark</a>
-                </div>
-              </div>
+          <div class="back">
+            <div class="inner">
+              <p>This tool is used for scanning network ports to discover vulnerabilities on open ports or devices. </p>
+              <a href="nmap.org">Nmap</a>
             </div>
           </div>
-          <div class="col" ontouchstart="this.classList.toggle('hover');">
-            <div class="container">
-              <div id="metasploit" class="front">
-                <div class="inner">
-                  <p>Metasploit</p>
-                  <span>Pen-testing Tool</span>
-                </div>
-              </div>
-              <div class="back">
-                <div class="inner">
-                  <p>An open-source framework that is used to probe systematic vulnerabilities on networks and devices.</p>
-                    <a href="metasploit.com">Metasploit</a>
-                </div>
-              </div>
+        </div>
+      </div>
+      <div class="col" ontouchstart="this.classList.toggle('hover');">
+        <div class="container">
+          <div id="wireshark" class="front">
+            <div class="inner">
+              <p>Wireshark</p>
+              <span>Network Traffic Analyzer</span>
             </div>
           </div>
-    </div>
-    </div>
+          <div class="back">
+            <div class="inner">
+              <p>This tool allows you to analyze a network's traffic, specifically the packets that flow through your device or other devices on the network.</p>
+                <a href="wireshark.org">Wireshark</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col" ontouchstart="this.classList.toggle('hover');">
+        <div class="container">
+          <div id="metasploit" class="front">
+            <div class="inner">
+              <p>Metasploit</p>
+              <span>Pen-testing Tool</span>
+            </div>
+          </div>
+          <div class="back">
+            <div class="inner">
+              <p>An open-source framework that is used to probe systematic vulnerabilities on networks and devices.</p>
+                <a href="metasploit.com">Metasploit</a>
+            </div>
+          </div>
+        </div>
+      </div>
 </div>
 
 </body>

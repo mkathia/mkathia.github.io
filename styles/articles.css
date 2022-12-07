@@ -1,3 +1,7 @@
+html {
+    overflow-x: hidden;
+
+}
 .links img {
     width: 163px;
     height: 100px;
