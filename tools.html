@@ -1,72 +1,66 @@
 <!DOCTYPE html>
-
 <html>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--testing-->
-<link rel="stylesheet" href="styles/style.css">
-<link rel="stylesheet" href="styles/tools.css">
-<!-- <script src = "scripts/passgen.js"></script> -->
-<!-- By Milind Kathiari-->
-<header>
-    <title>Security Tools</title>
-</header>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--testing-->
+  <link rel="stylesheet" href="styles/style.css">
+  <link rel="stylesheet" href="styles/tools.css">
+  <!-- By Milind Kathiari-->
+  <header>
+      <title>Security Tools</title>
+  </header>
 
-<h1 class='page_title'>Security Tools</h1>
-<div class="pass_gen">
+  <h1 class='page_title'>Security Tools</h1>
+  <div class="pass_gen">
     <h1>PASSWORD GENERATOR</h1>
-    <!-- <link rel="stylesheet" href="styles/toolst.css"> -->
     <div class="pw-container">
-        <div class="pw-header">
-            <div class="pw">
-                <label id="pw">Password Here</label>
-            </div>
-            <button id="copy">Copy</button>
+      <div class="pw-header">
+        <div class="pw">
+          <label id="pw">Password Here</label>
         </div>
+        <button id="copy">Copy</button>
+      </div>
         
-        <div class="pw-body">
-            <div class="form-control">
-                <label for="length">Password Length</label>
-                <input id="len" value="10" type="number" min="8" max="30">
-            </div>
-            <div class="form-control">
-                <label for="upper">Contain Uppercase Letters</label>
-                <input id="upper" type="checkbox">
-            </div>
-            <div class="form-control">
-                <label for="lower">Contain Lowercase Letters</label>
-                <input id="lower" type="checkbox" checked>
-            </div>
-            <div class="form-control">
-                <label for="number">Contain Numbers </label>
-                <input id="number" type="checkbox" checked>
-            </div>
-            <div class="form-control">
-                <label for="symbol">Contain Symbol</label>
-                <input id="symbol" type="checkbox">
-            </div>
-            <button class="generate" id="generate">Generate Password</button>
-            <script src="scripts/passgen.js"></script>
+      <div class="pw-body">
+        <div class="form-control">
+          <label for="length">Password Length</label>
+          <input id="len" value="10" type="number" min="8" max="30">
         </div>
+        <div class="form-control">
+          <label for="upper">Contain Uppercase Letters</label>
+          <input id="upper" type="checkbox">
+        </div>
+        <div class="form-control">
+          <label for="lower">Contain Lowercase Letters</label>
+          <input id="lower" type="checkbox" checked>
+        </div>
+        <div class="form-control">
+          <label for="number">Contain Numbers </label>
+          <input id="number" type="checkbox" checked>
+        </div>
+        <div class="form-control">
+          <label for="symbol">Contain Symbol</label>
+          <input id="symbol" type="checkbox">
+        </div>
+        <button class="generate" id="generate">Generate Password</button>
+        <script src="scripts/passgen.js"></script>
+      </div>
     </div>
-</div>
+  </div>
 
-<div class="checker_container">
+  <div class="checker_container">
     <div class="checker">
-        <h4>
-            Password Strength Checker
-        </h4>
-        <br>
-        
-        <input type="password" placeholder="Type your password" id="PassEntry" class="passwordInput"><input type="checkbox" onclick="showPassword()"> Show Password
-        <br>
-        <span id="StrengthDisp" class="badge displayBadge">Weak</span>
-        <br>
-        <span id="EntropyDisp" class = "entropy">Entropy: 0 bits</span>
-        <script src="scripts/passcheck.js"></script>
+      <h4>Password Strength Checker</h4>
+      <br>
+      <input type="password" placeholder="Type your password" id="PassEntry" class="passwordInput"><input type="checkbox" onclick="showPassword()"> Show Password
+      <br>
+      <span id="StrengthDisp" class="badge displayBadge">Weak</span>
+      <br>
+      <span id="EntropyDisp" class = "entropy">Entropy: 0 bits</span>
+      <script src="scripts/passcheck.js"></script>
     </div>
-</div>
-<div>
-  <h1 class="adv_title">Advanced Tools</h1>
-    <div class="col" ontouchstart="this.classList.toggle('hover');">
+  </div>
+  <div>
+    <h1 class="adv_title">Advanced Tools</h1>
+      <div class="col" ontouchstart="this.classList.toggle('hover');">
         <div class="container">
           <div id="nmap" class="front">
             <div class="inner">
@@ -93,7 +87,7 @@
           <div class="back">
             <div class="inner">
               <p>This tool allows you to analyze a network's traffic, specifically the packets that flow through your device or other devices on the network.</p>
-                <a href="https://wireshark.org">Wireshark</a>
+              <a href="https://wireshark.org">Wireshark</a>
             </div>
           </div>
         </div>
@@ -109,19 +103,18 @@
           <div class="back">
             <div class="inner">
               <p>An open-source framework that is used to probe systematic vulnerabilities on networks and devices.</p>
-                <a href="https://metasploit.com">Metasploit</a>
+              <a href="https://metasploit.com">Metasploit</a>
             </div>
           </div>
         </div>
       </div>
-</div>
+    </div>
+  </div>
 
-<!-- This page is for the tools used in the project -->
-<footer class='foot'>
-    <p>© 2022 DuckDefenders</p>
-    <a href="index.html">Home<br></a>
-    <a href="aboutus.html">About Us<br></a>
-    <a href="articles.html">Articles</a>
-</footer>
-
+  <footer class='foot'>
+      <p>© 2022 DuckDefenders</p>
+      <a href="index.html">Home<br></a>
+      <a href="aboutus.html">About Us<br></a>
+      <a href="articles.html">Articles</a>
+  </footer>
 </html>
