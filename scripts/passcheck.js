@@ -1,14 +1,13 @@
 // timeout before a callback is called
-
 let timeout;
 
-// traversing the DOM and getting the input and span using their IDs
-
+// Getting the password input and the badge element
 let password = document.getElementById('PassEntry')
 let strengthBadge = document.getElementById('StrengthDisp')
 let entropyBadge = document.getElementById('EntropyDisp')
 entropyBadge.style.color = 'black'
 
+// show password function to show password when the box is checked
 function showPassword() {
     let x = password;
     if (x.type === "password") {
@@ -18,9 +17,11 @@ function showPassword() {
     }
 }
 
+// Password entropy function: length times log base 2 of charset length
 const calcEntropy = (charset, length) =>
   Math.round(length * Math.log(charset) / Math.LN2)
 
+// Standard character sets
 const stdCharsets = [{
     name: 'lowercase',
     re: /[a-z]/, // abcdefghijklmnopqrstuvwxyz
@@ -39,6 +40,7 @@ const stdCharsets = [{
     length: 33
 }]
 
+// Calculate the length of a character set
 const calcCharsetLengthWith = charsets =>
   string =>
     charsets.reduce((length, charset) =>
@@ -46,52 +48,53 @@ const calcCharsetLengthWith = charsets =>
 
 const calcCharsetLength = calcCharsetLengthWith(stdCharsets)
   
+// Calculate the entropy of a string
 const passwordEntropy = string =>
   string ? calcEntropy(calcCharsetLength(string), string.length) : 0
 
-// The strong and weak password Regex pattern checker
+// Password strength checker function
+function testPassword(pwString) {
+    var strength = 0;
 
-let strongPassword = new RegExp('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{8,})')
-let mediumPassword = new RegExp('((?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{6,}))|((?=.*[a-z])(?=.*[A-Z])(?=.*[^A-Za-z0-9])(?=.{8,}))')
+    strength += /[A-Z]+/.test(pwString) ? 1 : 0;
+    strength += /[a-z]+/.test(pwString) ? 1 : 0;
+    strength += /[0-9]+/.test(pwString) ? 1 : 0;
+    strength += /[\W]+/.test(pwString) ? 1 : 0;
 
-function StrengthChecker(PasswordParameter){
-    // We then change the badge's color and text based on the password strength
+    entropy = passwordEntropy(pwString)
 
-    if(strongPassword.test(PasswordParameter)) {
+    if ((passwordEntropy(pwString) > 64) || (strength >= 3)) {
         strengthBadge.style.backgroundColor = "green"
-        strengthBadge.textContent = 'Strong'
-        entropyBadge.style.backgroundColor = 'green'
-        entropyBadge.textContent = 'Entropy: ' + passwordEntropy(PasswordParameter) + ' bits'
-    } else if(mediumPassword.test(PasswordParameter)){
+            strengthBadge.textContent = 'Strong'
+            entropyBadge.style.backgroundColor = 'green'
+            entropyBadge.textContent = 'Entropy: ' + passwordEntropy(pwString) + ' bits'
+    } else if ((passwordEntropy(pwString) > 32) || (strength >= 2)) {
         strengthBadge.style.backgroundColor = 'yellow'
         strengthBadge.textContent = 'Medium'
         entropyBadge.style.backgroundColor = 'yellow'
-        entropyBadge.textContent = 'Entropy: ' + passwordEntropy(PasswordParameter) + ' bits'
-    } else{
+        entropyBadge.textContent = 'Entropy: ' + passwordEntropy(pwString) + ' bits'
+    } else {
         strengthBadge.style.backgroundColor = 'red'
         strengthBadge.textContent = 'Weak'
         entropyBadge.style.backgroundColor = 'red'
-        entropyBadge.textContent = 'Entropy: ' + passwordEntropy(PasswordParameter) + ' bits'
+        entropyBadge.textContent = 'Entropy: ' + passwordEntropy(pwString) + ' bits'
     }
 }
 
 // Adding an input event listener when a user types to the  password input 
-
 password.addEventListener("input", () => {
 
     //The badge is hidden by default, so we show it
-
     strengthBadge.style.display= 'block'
     entropyBadge.style.display= 'block'
 
+    //We clear the timeout so that the callback is not called until the user stops typing
     clearTimeout(timeout);
 
-    //We then call the StrengChecker function as a callback then pass the typed password to it
-
-    timeout = setTimeout(() => StrengthChecker(password.value), 500);
+    //We then call the StrengthChecker function as a callback then pass the typed password to it
+    timeout = setTimeout(() => testPassword(password.value), 500);
 
     //Incase a user clears the text, the badge is hidden again
-
     if(password.value.length !== 0){
         strengthBadge.style.display != 'block'
         entropyBadge.style.display != 'block'
