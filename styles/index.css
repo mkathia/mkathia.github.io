@@ -323,7 +323,7 @@
     }
 }
     
-@media screen and (max-width: 479px) {
+@media screen and (max-width: 500px) {
     /* start of phone styles */
     h1 {
         color: #3c3bfa;
