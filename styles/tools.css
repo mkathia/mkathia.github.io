@@ -66,6 +66,10 @@ h4 {
 }
 
 .tool_title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: center;
   text-align: center;
   font-size: xx-large;
   margin-bottom: 1%;
