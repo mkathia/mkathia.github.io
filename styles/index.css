@@ -325,7 +325,9 @@
     
 @media screen and (max-width: 479px) {
     /* start of phone styles */
-    /* html{overflow:hidden;} */
+    h1 {
+        color: #3c3bfa;
+    }
     .mobile {
         height: 20vw;
         width: 50vw;
@@ -351,6 +353,7 @@
         margin-bottom: 25%;
         overflow-y: hidden;
     }
+
     .left{
         top: 16%;
         left:0;
@@ -362,56 +365,68 @@
         right:0;
     }
     .rectangle {
+        margin-top: -5%;
         width: 90%;
         height: 60%;
-        /* margin-left:auto; */
-        /* margin-right:auto; */
         overflow: hidden;
+        font-size: .7em;
+        text-align: center;
         outline: 2px solid #000000;
-        z-index: -1;
-        /* Move below the header */
-        position: relative;
-        /* margin-top: -1%; */
+        background-color: #252525;
+        margin-left:auto;
+        margin-right:auto;
+        overflow: hidden;
+    } 
 
-    }   
+
     .rectangle .square {
         position: relative;
         width: 100%;
         height: 33%;
-        text-align: center;
-        margin-left:auto;
-        margin-right:auto;
         overflow-x: hidden;
         font-size: 2em;
+        background-color: #252525;
+        outline: auto;
+        outline-color: #000000;
     }
+
+    .rectangle .square a {
+        color: #3c3bfa;
+    }
+
+    .htmllink {
+        color: #3c3bfa;
+    }
+
     .right a#c1 {
         display: flex;
         justify-content: center;
-        color: #ffffd1;
+        color: #3c3bfa;
         text-decoration: none;
-        font-size: 1.4em;
+        font-size: 1em;
         font-weight: bold;
+        /* outline: auto; */
     }
     .right a#c2 {
         display: flex;
         justify-content: center;
-        color: #ffffd1;
+        color: #3c3bfa;
         text-decoration: none;
-        font-size: 1.5em;
+        font-size: 1em;
         font-weight: bold;
     }
     .right a#c3 {
         display: flex;
         justify-content: center;
-        color: #ffffd1;
+        color: #3c3bfa;
         text-decoration: none;
-        font-size: 1.3em;
+        font-size: 1em;
         font-weight: bold;
     }
     .right a#c4 {
         display: flex;
         justify-content: center;
-        color: #ffffd1;
+        color: #3c3bfa;
         text-decoration: none;
         font-size: 1em;
         font-weight: bold;
@@ -419,71 +434,18 @@
     .right a#c5 {
         display: flex;
         justify-content: center;
-        color: #ffffd1;
+        color: #3c3bfa;
         text-decoration: none;
         font-size: 1em;
         font-weight: bold;
     }
 
     .right .circle1, .circle2, .circle3, .circle4, .circle5 {
-        /* width: 150px; */
-        /* height: 150px; */
         width: 25vw;
         height: 25vw;
         border-radius: 100%;
-        /* background-color: #252525; */
         overflow-x: hidden;
         outline: 2px solid #000000;
-        /* z-index: -1; */
-    }
-    .circle1 {
-        position:relative;
-        left: 10%;
-        top: -5%;
-        background: url("/images/circle1.jpeg") no-repeat;
-        background-size: cover;
-        text-align: center;
-        font-size: 1em;
-    }
-
-    .circle2 {
-        position:relative;
-        left: 60%;
-        top: -24%;
-        background: url("/images/circle2.jpeg") no-repeat;
-        background-size: cover;
-        text-align: center;
-        font-size: .72em;
-    }
-    .circle3 {
-        position:relative;
-        left: 10%;
-        top: -15%;
-        background: url("/images/circle3.jpeg") repeat;
-        background-size: calc(100% + 10px);
-        background-position: center;
-        text-align: center;
-        font-size: .8em;
-    }
-    .circle4 {
-        position:relative;
-        left: 60%;
-        bottom: 34%;
-        background: url("/images/circle4.jpeg") repeat;
-        background-size: calc(200% + 10px);
-        background-position: center;
-        text-align: center;
-        font-size: .7em;
-    }
-    .circle5 {
-        position:relative;
-        left: 35%;
-        bottom: 25%;
-        background: url("/images/circle5.png") repeat;
-        background-size: 110%;
-        background-position: center;
-        text-align: center;
-        font-size: 1em;
     }
     .mobile {
         display: block;
